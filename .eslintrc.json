@@ -1,0 +1,164 @@
+{
+  /* parser allow for ESLint to lint TS source code */
+  "parser": "@typescript-eslint/parser",
+  "plugins": [
+    "react",
+    "import",
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "react-app",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  /* ability to disable some rules for certain file extensions */
+  "overrides": [
+    {
+      "files": [
+        "**/*.stories.tsx"
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
+      }
+    }
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    /* warning если использовать console.log */
+    "no-console": 1,
+    /* removes brackets in arrow functions if they can be omitted */
+    "arrow-parens": [
+      1,
+      "as-needed"
+    ],
+    /* required single quotes */
+    "quotes": [
+      1,
+      "single"
+    ],
+    /* sets single quotes for props in jsx */
+    "jsx-quotes": [
+      2,
+      "prefer-single"
+    ],
+    /* sets a semicolon(;) at the end of lines */
+    "semi": [
+      1,
+      "always"
+    ],
+    /* requires use of const for variables whose value doesn't change after declaration */
+    "prefer-const": [
+      1,
+      {
+        "destructuring": "all",
+        "ignoreReadBeforeAssign": false
+      }
+    ],
+    /* disables unused variables */
+    "no-unused-vars": [
+      1,
+      {
+        "args": "after-used",
+        "caughtErrors": "none",
+        "ignoreRestSiblings": true
+      }
+    ],
+    /* sets the number of spaces when indenting */
+    "indent": "off",
+    "@typescript-eslint/indent": [
+      1,
+      2
+    ],
+    /* requires or prohibits final commas */
+    "comma-dangle": [
+      1,
+      "always-multiline"
+    ],
+    /* automatically places spaces after commas */
+    "comma-spacing": [
+      2,
+      {
+        "before": false,
+        "after": true
+      }
+    ],
+    /* empty lines - maximum one */
+    "no-multiple-empty-lines": [
+      2,
+      {
+        "max": 1,
+        "maxEOF": 0
+      }
+    ],
+    /* empty string before return */
+    "newline-before-return": 2,
+    /* maximum string length */
+    "max-len": [
+      1,
+      {
+        "code": 150,
+        "ignoreComments": true,
+        "ignoreUrls": true,
+        "ignorePattern": "import"
+      }
+    ],
+    /* inserts an empty line at the end of the file */
+    "eol-last": [
+      1,
+      "always"
+    ],
+    /* spaces inside curly brackets inside jsx */
+    "react/jsx-curly-spacing": [
+      1,
+      {
+        "when": "always",
+        "children": true,
+        "spacing": {
+          "objectLiterals": "never"
+        }
+      }
+    ],
+    /* camelСase for variables */
+    "camelcase": [
+      2,
+      {
+        "properties": "always",
+        "ignoreDestructuring": true
+      }
+    ],
+    /* provides uniform distribution of intervals inside brackets */
+    "object-curly-spacing": [
+      1,
+      "always"
+    ],
+    /* disallow unreachable code after */
+    "no-unreachable": 2,
+    /* disallow else blocks after return statements in if statements */
+    "no-else-return": 2,
+    /* prohibits useless return */
+    "no-useless-return": 2,
+    /* disallow empty block statements */
+    "no-empty": 2,
+    /* suppress errors for missing 'import React' in files */
+    "react/react-in-jsx-scope": "off",
+    /* reduces multiple spaces to one */
+    "no-multi-spaces": 2,
+    /* prevent unnecessary path segments in import and require statements */
+    "import/no-useless-path-segments": 2,
+    /* prevent cycle imports */
+    "import/no-cycle": 2,
+    /* prohibits re-import */
+    "import/no-duplicates": 2,
+    /* throws an error if not all imports are at the beginning of the file */
+    "import/first": 2,
+    /* inserts an empty string after the last import */
+    "import/newline-after-import": 2,
+    /* doesn't allow meaningless line-to-line translations and regular expressions */
+    "no-useless-escape": 1,
+    /* checks arrays of dependencies for hooks */
+    "react-hooks/exhaustive-deps": 1
+  }
+}

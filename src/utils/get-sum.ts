@@ -1,3 +1,1 @@
-export const getSum = () => {
-  return 5 + 5;
-}
+export const getSum = () => 5 + 5;

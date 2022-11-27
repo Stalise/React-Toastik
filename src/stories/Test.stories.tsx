@@ -1,16 +1,14 @@
 import React from 'react';
 
-import { Test } from "../../build/bundle";
+import { Test } from '../../build/bundle';
 
 import '../assest/styles/null.css';
 
 export default {
   title: 'Test',
-  component: Test
-}
+  component: Test,
+};
 
-export const DefaultApp = (args) => {
-  return (
-    <Test />
-  )
-}
+export const DefaultApp = () => (
+  <Test />
+);
