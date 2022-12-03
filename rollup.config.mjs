@@ -18,18 +18,19 @@ export const addStyleImport = () => ({
   name: 'addStylesImport plugin',
   // closeBundle hook used after bundle is created
   closeBundle() {
-    const file = './build/bundle.js'
+    const file = './build/bundle.js';
     // this construction adds import of styles to the start of the js bundle file
     fs.readFile(file, 'utf8', (err, data) => {
-      if (err) throw err
-      const newData = data.replace(/^/, "import './bundle.css';")
-      fs.writeFile(file, newData, (err) => {
+      if (err) throw err;
+
+      const newData = data.replace(/^/, 'import "./bundle.css";');
+      fs.writeFile(file, newData, err => {
         if (err) throw err;
-      })
+      });
     }
-    )
-  }
-})
+    );
+  },
+});
 
 export default {
   input: 'src/index.ts',
@@ -38,7 +39,7 @@ export default {
       file: 'build/bundle.js',
       format: 'esm',
       sourcemap: prod,
-    }
+    },
   ],
   plugins: [
     external(),
@@ -49,9 +50,9 @@ export default {
       modules: true,
       use: 'sass',
       extract: prod,
-      minimize: prod
+      minimize: prod,
     }),
     prod && terser(),
     prod && addStyleImport(),
-  ]
-}
+  ],
+};

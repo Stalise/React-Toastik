@@ -1,0 +1,16 @@
+{
+  "presets": [
+    // allows to use the latest versions of javascript
+    "@babel/preset-env",
+    // handles js syntax correctly, useful for rtl
+    [
+      "@babel/preset-react",
+      // no need to import 'React' during rtl tests
+      {
+        "runtime": "automatic"
+      }
+    ],
+    // allows to process typescript
+    "@babel/preset-typescript"
+  ]
+}

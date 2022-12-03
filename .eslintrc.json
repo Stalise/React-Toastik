@@ -4,12 +4,14 @@
   "plugins": [
     "react",
     "import",
+    "jest",
     "@typescript-eslint"
   ],
   "extends": [
     "react-app",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended"
   ],
   /* ability to disable some rules for certain file extensions */
   "overrides": [
@@ -21,6 +23,9 @@
         "import/no-anonymous-default-export": "off"
       }
     }
+  ],
+  "ignorePatterns": [
+    "rollup.config.mjs"
   ],
   "env": {
     "browser": true,
