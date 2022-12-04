@@ -1,59 +1,32 @@
 {
   /* parser allow for ESLint to lint TS source code */
   "parser": "@typescript-eslint/parser",
-  "plugins": [
-    "react",
-    "import",
-    "jest",
-    "@typescript-eslint"
-  ],
+  "plugins": ["react", "import", "jest", "@typescript-eslint", "prettier"],
   "extends": [
     "react-app",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended"
   ],
   /* ability to disable some rules for certain file extensions */
   "overrides": [
     {
-      "files": [
-        "**/*.stories.tsx"
-      ],
+      "files": ["**/*.stories.tsx"],
       "rules": {
         "import/no-anonymous-default-export": "off"
       }
     }
   ],
-  "ignorePatterns": [
-    "rollup.config.mjs"
-  ],
+  "ignorePatterns": ["rollup.config.mjs"],
   "env": {
     "browser": true,
     "node": true
   },
   "rules": {
+    "prettier/prettier": 1,
     /* warning если использовать console.log */
     "no-console": 1,
-    /* removes brackets in arrow functions if they can be omitted */
-    "arrow-parens": [
-      1,
-      "as-needed"
-    ],
-    /* required single quotes */
-    "quotes": [
-      1,
-      "single"
-    ],
-    /* sets single quotes for props in jsx */
-    "jsx-quotes": [
-      2,
-      "prefer-single"
-    ],
-    /* sets a semicolon(;) at the end of lines */
-    "semi": [
-      1,
-      "always"
-    ],
     /* requires use of const for variables whose value doesn't change after declaration */
     "prefer-const": [
       1,
@@ -71,61 +44,8 @@
         "ignoreRestSiblings": true
       }
     ],
-    /* sets the number of spaces when indenting */
-    "indent": "off",
-    "@typescript-eslint/indent": [
-      1,
-      2
-    ],
-    /* requires or prohibits final commas */
-    "comma-dangle": [
-      1,
-      "always-multiline"
-    ],
-    /* automatically places spaces after commas */
-    "comma-spacing": [
-      2,
-      {
-        "before": false,
-        "after": true
-      }
-    ],
-    /* empty lines - maximum one */
-    "no-multiple-empty-lines": [
-      2,
-      {
-        "max": 1,
-        "maxEOF": 0
-      }
-    ],
     /* empty string before return */
     "newline-before-return": 2,
-    /* maximum string length */
-    "max-len": [
-      1,
-      {
-        "code": 150,
-        "ignoreComments": true,
-        "ignoreUrls": true,
-        "ignorePattern": "import"
-      }
-    ],
-    /* inserts an empty line at the end of the file */
-    "eol-last": [
-      1,
-      "always"
-    ],
-    /* spaces inside curly brackets inside jsx */
-    "react/jsx-curly-spacing": [
-      1,
-      {
-        "when": "always",
-        "children": true,
-        "spacing": {
-          "objectLiterals": "never"
-        }
-      }
-    ],
     /* camelСase for variables */
     "camelcase": [
       2,
@@ -134,11 +54,8 @@
         "ignoreDestructuring": true
       }
     ],
-    /* provides uniform distribution of intervals inside brackets */
-    "object-curly-spacing": [
-      1,
-      "always"
-    ],
+    "arrow-body-style": [1, "as-needed"],
+    "prefer-arrow-callback": 1,
     /* disallow unreachable code after */
     "no-unreachable": 2,
     /* disallow else blocks after return statements in if statements */
@@ -149,8 +66,6 @@
     "no-empty": 2,
     /* suppress errors for missing 'import React' in files */
     "react/react-in-jsx-scope": "off",
-    /* reduces multiple spaces to one */
-    "no-multi-spaces": 2,
     /* prevent unnecessary path segments in import and require statements */
     "import/no-useless-path-segments": 2,
     /* prevent cycle imports */

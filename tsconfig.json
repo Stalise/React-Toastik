@@ -9,23 +9,13 @@
     "skipLibCheck": true,
     "declaration": false,
     "moduleResolution": "node",
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "outDir": "build",
     "baseUrl": "src",
     "paths": {
-      "*": [
-        "*"
-      ]
+      "*": ["*"]
     }
   },
-  "include": [
-    "./src"
-  ],
-  "exclude": [
-    "./src/stories",
-    "**/*.test.ts"
-  ]
+  "include": ["./src"],
+  "exclude": ["./src/stories", "**/*.test.ts"]
 }

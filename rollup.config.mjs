@@ -24,11 +24,10 @@ export const addStyleImport = () => ({
       if (err) throw err;
 
       const newData = data.replace(/^/, 'import "./bundle.css";');
-      fs.writeFile(file, newData, err => {
+      fs.writeFile(file, newData, (err) => {
         if (err) throw err;
       });
-    }
-    );
+    });
   },
 });
 

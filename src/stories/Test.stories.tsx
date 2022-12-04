@@ -9,6 +9,4 @@ export default {
   component: Test,
 };
 
-export const DefaultApp = () => (
-  <Test />
-);
+export const DefaultApp = () => <Test />;

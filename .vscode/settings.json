@@ -5,17 +5,15 @@
     "typescript",
     "typescriptreact"
   ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
-  "eslint.format.enable": true,
+  "eslint.format.enable": false,
   "css.validate": false,
   "scss.validate": false,
   "stylelint.enable": true,
-  "stylelint.validate": [
-    "css",
-    "scss"
-  ],
+  "stylelint.validate": ["css", "scss"],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll.stylelint": true
-  },
+  }
 }
