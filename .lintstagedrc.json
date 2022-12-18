@@ -1,5 +1,5 @@
 {
   "**/*.(js|jsx|ts|tsx|css|scss|json|md)": ["yarn format"],
-  "**/*.(js|jsx|ts|tsx)": ["yarn lint:fix", "yarn lint"],
-  "**/*.(css|scss)": ["yarn style:fix", "yarn style"]
+  "src/**/*.(js|jsx|ts|tsx)": ["yarn lint:fix", "yarn lint"],
+  "src/**/*.(css|scss)": ["yarn style:fix", "yarn style"]
 }

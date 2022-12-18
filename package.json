@@ -38,7 +38,7 @@
     "test:rtl": "cross-env JEST_EXT=tsx jest --config jest.config.ts --passWithNoTests --watchAll=false",
     "format": "prettier --write .",
     "lint": "eslint -c .eslintrc.json --ext .js,.jsx,.ts,.tsx --max-warnings=0 .",
-    "lint:fix": "yarn lint -- --fix",
+    "lint:fix": "yarn lint --fix",
     "style": "stylelint \"**/*.scss\" --max-warnings=0",
     "style:fix": "stylelint \"**/*.scss\" --fix"
   },
