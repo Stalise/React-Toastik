@@ -2,13 +2,12 @@ import '@testing-library/jest-dom';
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 
-import { Test } from '../../src/components/test';
+import { Example } from './Toast.stories';
 
 test('renders test component', () => {
-  render(<Test />);
+  render(<Example />);
 
-  const test = screen.getByText(/Hi man!/i);
-  // screen.debug();
+  const test = screen.getByText(/Hello/i);
 
   expect(test).toBeInTheDocument();
 });

@@ -1,5 +1,5 @@
 import './assest/styles/globals.css';
 
-import { Test } from 'components/test';
+import { ToastContainer } from 'components/toast-container';
 
-export { Test };
+export { ToastContainer };
