@@ -2,6 +2,7 @@ import { FC } from 'react';
 import ReactDOM from 'react-dom';
 import cn from 'classnames';
 
+import { TOAST_CONTAINER_ID } from '../../data/constants';
 import type { PositionType } from './types';
 
 import styles from './index.module.scss';
@@ -16,6 +17,10 @@ export const ToastContainer: FC<IProps> = ({
   container = document.body,
 }) =>
   ReactDOM.createPortal(
-    <div className={cn(styles.wrapper, styles[position])}>Hello</div>,
+    <div
+      className={cn(styles.wrapper, styles[position])}
+      id={TOAST_CONTAINER_ID}>
+      Container
+    </div>,
     container
   );

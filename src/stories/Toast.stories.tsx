@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { ToastContainer } from '../../build/bundle';
+import { ToastContainer, ToastService } from '../../build/bundle';
 
 import '../assest/styles/null.css';
 
@@ -58,9 +58,15 @@ export default {
   },
 };
 
-export const Example = (args) => (
-  <>
-    <ToastContainer position={args.position} />
-    <button>Button</button>
-  </>
-);
+export const Example = (args) => {
+  const showToast = () => {
+    ToastService.addToast(args);
+  };
+
+  return (
+    <>
+      <ToastContainer position={args.position} />
+      <button onClick={showToast}>Button</button>
+    </>
+  );
+};
