@@ -11,3 +11,9 @@ export type ToastDataType = {
   ['toast-lifetime']?: number;
   id?: string;
 };
+
+export type PositionType =
+  | 'top-right'
+  | 'bottom-right'
+  | 'top-left'
+  | 'bottom-left';

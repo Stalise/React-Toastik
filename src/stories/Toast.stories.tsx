@@ -1,8 +1,10 @@
-import React from 'react';
-
-import { ToastContainer, ToastService } from '../../build/bundle';
+import { ToastContainer } from 'components/toast-container';
+import { ToastService } from 'services/toast-service';
+import type { ToastDataType, PositionType } from 'types/toast';
 
 import '../assest/styles/null.css';
+
+type ArgsType = ToastDataType & { position: PositionType };
 
 export default {
   title: 'Toast',
@@ -58,7 +60,7 @@ export default {
   },
 };
 
-export const Example = (args) => {
+export const Example = (args: ArgsType) => {
   const showToast = () => {
     ToastService.addToast(args);
   };

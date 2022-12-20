@@ -1,20 +1,25 @@
-import type { ToastDataType } from '../types/toast';
-import { addToastHelper } from '../utils/add-toast-helper';
+import type { ToastDataType } from 'types/toast';
+import { addToastHelper } from 'utils/add-toast-helper';
+import { removeToastHelper } from 'utils/remove-toast-helper';
 
-class Service {
-  static _instance: Service;
-  private toasts: ToastDataType[] = [];
+export class Service {
+  private static instance: Service;
+  protected toasts: ToastDataType[] = [];
 
   constructor() {
-    if (Service._instance) {
-      return Service._instance;
+    if (Service.instance) {
+      return Service.instance;
     }
 
-    Service._instance = this;
+    Service.instance = this;
   }
 
   addToast(data: ToastDataType) {
-    addToastHelper(data, this.toasts);
+    addToastHelper.call(this, data);
+  }
+
+  removeToast(id: string) {
+    removeToastHelper.call(this, id);
   }
 }
 

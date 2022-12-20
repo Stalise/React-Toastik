@@ -1,13 +1,13 @@
 import '@testing-library/jest-dom';
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
 
 import { Example } from './Toast.stories';
+import { TOAST_CONTAINER_ID } from 'data/constants';
 
 test('renders test component', () => {
-  render(<Example />);
+  render(<Example position='top-right' type='info' />);
 
-  const test = screen.getByText(/Hello/i);
+  const container = document.getElementById(TOAST_CONTAINER_ID);
 
-  expect(test).toBeInTheDocument();
+  expect(container).toBeInTheDocument();
 });
