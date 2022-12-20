@@ -16,6 +16,6 @@
       "*": ["*"]
     }
   },
-  "include": ["./src"],
-  "exclude": ["./src/stories", "**/*.test.ts"]
+  "include": ["./src"]
+  // "exclude": ["./src/stories", "**/*.test.ts"]
 }

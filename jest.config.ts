@@ -9,7 +9,7 @@ const config: Config.InitialOptions = {
   coverageReporters: ['text-summary'],
   // cleans the moks after each it()
   clearMocks: true,
-  // Jest runs the code as JS, so when using TS, it needs to be converted via the installed ts-just package
+  // Jest runs the code as JS, so when using TS, it needs to be converted via the installed babel-jest package
   transform: {
     '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
   },
