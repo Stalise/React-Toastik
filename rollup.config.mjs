@@ -10,8 +10,10 @@ import { terser } from 'rollup-plugin-terser';
 import external from 'rollup-plugin-peer-deps-external';
 // configure postcss during assembly
 import postcss from 'rollup-plugin-postcss';
+import image from '@rollup/plugin-image';
 import fs from 'fs';
 
+// const root = path.resolve(__dirname);
 const prod = !process.env.ROLLUP_WATCH;
 
 export const addStyleImport = () => ({
@@ -37,10 +39,11 @@ export default {
     {
       file: 'build/bundle.js',
       format: 'esm',
-      sourcemap: prod,
+      sourcemap: false,
     },
   ],
   plugins: [
+    image(),
     external(),
     resolve(),
     commonjs(),
