@@ -18,6 +18,7 @@ const config: Config.InitialOptions = {
   // allows to isolate the specified file extensions
   moduleNameMapper: {
     '^.+\\.(css|scss)$': 'babel-jest',
+    '^.+\\.svg$': 'jest-svg-transformer',
   },
   // array of names in which Jest searches for the files it needs
   // src path for aliases configured in the ts.config folder
