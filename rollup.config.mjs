@@ -11,10 +11,27 @@ import external from 'rollup-plugin-peer-deps-external';
 // configure postcss during assembly
 import postcss from 'rollup-plugin-postcss';
 import image from '@rollup/plugin-image';
+import alias from '@rollup/plugin-alias';
 import fs from 'fs';
+import path from 'path';
 
-// const root = path.resolve(__dirname);
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 const prod = !process.env.ROLLUP_WATCH;
+
+const folders = [
+  'assets',
+  'components',
+  'data',
+  'services',
+  'stories',
+  'types',
+  'utils',
+];
 
 export const addStyleImport = () => ({
   name: 'addStylesImport plugin',
@@ -39,7 +56,7 @@ export default {
     {
       file: 'build/bundle.js',
       format: 'esm',
-      sourcemap: false,
+      sourcemap: prod,
     },
   ],
   plugins: [
@@ -47,7 +64,13 @@ export default {
     external(),
     resolve(),
     commonjs(),
-    typescript({ tsconfig: './tsconfig.json' }),
+    typescript(),
+    alias({
+      entries: folders.map((folder) => ({
+        find: folder,
+        replacement: path.resolve(__dirname, `src/${folder}`),
+      })),
+    }),
     postcss({
       modules: true,
       use: 'sass',
