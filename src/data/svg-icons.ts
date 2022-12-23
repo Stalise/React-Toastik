@@ -1,8 +1,8 @@
-import svgInfo from 'assest/static/info-icon.svg';
-import svgWarning from 'assest/static/warning-icon.svg';
-import svgError from 'assest/static/error-icon.svg';
-import svgSuccess from 'assest/static/success-icon.svg';
-import svgCross from 'assest/static/cross-icon.svg';
+import svgInfo from 'assets/static/info-icon.svg';
+import svgWarning from 'assets/static/warning-icon.svg';
+import svgError from 'assets/static/error-icon.svg';
+import svgSuccess from 'assets/static/success-icon.svg';
+import svgCross from 'assets/static/cross-icon.svg';
 
 export const svgIcons = {
   info: svgInfo,

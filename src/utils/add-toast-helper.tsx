@@ -9,8 +9,7 @@ import type { ToastDataType } from 'types/toast';
 
 export function addToastHelper(this: Service, data: ToastDataType): void {
   const toast: ToastDataType = {
-    ...toastConfiguration.default,
-    ...toastConfiguration[data.type],
+    ...toastConfiguration,
     ...data,
     id: uuidv4(),
   };

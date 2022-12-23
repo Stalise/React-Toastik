@@ -1,8 +1,10 @@
 import { ToastContainer } from 'components/toast-container';
 import { ToastService } from 'services/toast-service';
-import type { ToastDataType, PositionType } from 'types/toast';
+import type { ToastDataType } from 'types/toast';
+import type { PositionType } from 'types/toast-container';
 
-import '../assest/styles/null.css';
+import './index.scss';
+import 'assets/styles/null.css';
 
 type ArgsType = ToastDataType & { position: PositionType };
 
@@ -17,25 +19,8 @@ export default {
       },
       defaultValue: 'info',
     },
-    title: {
+    text: {
       control: { type: 'text' },
-    },
-    description: {
-      control: { type: 'text' },
-    },
-    padding: {
-      defaultValue: '15px 20px 15px 20px',
-      control: { type: 'text' },
-    },
-    size: {
-      defaultValue: 'medium',
-      control: {
-        type: 'select',
-        options: ['small', 'medium', 'large'],
-      },
-    },
-    'background-color': {
-      control: { type: 'color' },
     },
     'animation-name': {
       defaultValue: 'fall',
@@ -68,7 +53,9 @@ export const Example = (args: ArgsType) => {
   return (
     <>
       <ToastContainer position={args.position} />
-      <button onClick={showToast}>Button</button>
+      <button className='button' onClick={showToast}>
+        Create toast
+      </button>
     </>
   );
 };

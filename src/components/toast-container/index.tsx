@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import cn from 'classnames';
 
 import { TOAST_CONTAINER_ID } from 'data/constants';
-import type { PositionType } from 'types/toast';
+import type { PositionType } from 'types/toast-container';
 
 import styles from './index.module.scss';
 

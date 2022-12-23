@@ -1,6 +1,6 @@
 import { ToastContainer } from 'components/toast-container';
-import { ToastService } from './services/toast-service';
+import { ToastService } from 'services/toast-service';
 
-import './assest/styles/globals.css';
+import 'assets/styles/globals.css';
 
 export { ToastContainer, ToastService };

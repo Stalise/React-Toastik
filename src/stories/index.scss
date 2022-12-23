@@ -1,0 +1,37 @@
+.button {
+  position: absolute;
+  top: calc(50% - 10px);
+  z-index: 1;
+  padding: 5px 10px;
+  overflow: hidden;
+  color: #ffffff;
+  font-size: 20px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  background: #3498db;
+  border: 0.25rem solid #3498db;
+
+  &:hover {
+    color: #3498db;
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    padding: 0.85em 0.75em;
+    background: #ecf0f1;
+    transform: scale(0, 0) rotate(-180deg);
+    transition: all 0.3s ease;
+    content: '';
+  }
+
+  &:hover::after {
+    transform: scale(1, 1) rotate(0deg);
+    transition: all 0.3s ease-out;
+  }
+}
